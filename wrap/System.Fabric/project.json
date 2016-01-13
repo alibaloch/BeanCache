@@ -1,0 +1,10 @@
+{
+  "version": "1.0.0-*",
+  "frameworks": {
+    "net451": {
+      "bin": {
+        "assembly": "../../../../../Windows/Microsoft.Net/assembly/GAC_64/System.Fabric/v4.0_4.0.0.0__31bf3856ad364e35/System.Fabric.dll"
+      }
+    }
+  }
+}

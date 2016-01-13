@@ -1,0 +1,76 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{A07B5EB6-E848-4116-A8D0-A826331D98C6}") = "BeanCacheApp", "BeanCacheApp\BeanCacheApp.sfproj", "{A1A08EE2-3862-4C1D-B4A9-2843AE45D349}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeanCache.Interface", "BeanCache.Interface\BeanCache.Interface.csproj", "{46D72B48-0E5E-4168-8D7E-682383673F74}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeanCacheService", "BeanCacheService\BeanCacheService.csproj", "{ED19C57A-5E1E-451C-8B91-052334A00323}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeanCacheWeb", "BeanCacheWeb\BeanCacheWeb.csproj", "{5E50D704-2445-48CA-9DEC-D6CF3FE07740}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PublishScripts", "PublishScripts", "{79970CEE-E964-4CBD-9818-9B9DC47A2041}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{C145ED15-021C-4F3C-BAED-673BA071F70A}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\Scripts\Deploy-AzureResourceGroup.ps1 = PublishScripts\Scripts\Deploy-AzureResourceGroup.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Templates", "Templates", "{81EC2360-88BE-4B6C-A68C-6F7E6EA9CEAB}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\Templates\BeanCacheDashBoard.json = PublishScripts\Templates\BeanCacheDashBoard.json
+		PublishScripts\Templates\BeanCacheDashBoard.param.dev.json = PublishScripts\Templates\BeanCacheDashBoard.param.dev.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{AF4B03E8-A0B4-4712-8F2D-0DDA6452997A}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A1A08EE2-3862-4C1D-B4A9-2843AE45D349}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{A1A08EE2-3862-4C1D-B4A9-2843AE45D349}.Debug|x64.ActiveCfg = Debug|x64
+		{A1A08EE2-3862-4C1D-B4A9-2843AE45D349}.Debug|x64.Build.0 = Debug|x64
+		{A1A08EE2-3862-4C1D-B4A9-2843AE45D349}.Debug|x64.Deploy.0 = Debug|x64
+		{A1A08EE2-3862-4C1D-B4A9-2843AE45D349}.Release|Any CPU.ActiveCfg = Release|x64
+		{A1A08EE2-3862-4C1D-B4A9-2843AE45D349}.Release|x64.ActiveCfg = Release|x64
+		{A1A08EE2-3862-4C1D-B4A9-2843AE45D349}.Release|x64.Build.0 = Release|x64
+		{A1A08EE2-3862-4C1D-B4A9-2843AE45D349}.Release|x64.Deploy.0 = Release|x64
+		{46D72B48-0E5E-4168-8D7E-682383673F74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46D72B48-0E5E-4168-8D7E-682383673F74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46D72B48-0E5E-4168-8D7E-682383673F74}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{46D72B48-0E5E-4168-8D7E-682383673F74}.Debug|x64.Build.0 = Debug|Any CPU
+		{46D72B48-0E5E-4168-8D7E-682383673F74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46D72B48-0E5E-4168-8D7E-682383673F74}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46D72B48-0E5E-4168-8D7E-682383673F74}.Release|x64.ActiveCfg = Release|Any CPU
+		{46D72B48-0E5E-4168-8D7E-682383673F74}.Release|x64.Build.0 = Release|Any CPU
+		{ED19C57A-5E1E-451C-8B91-052334A00323}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{ED19C57A-5E1E-451C-8B91-052334A00323}.Debug|x64.ActiveCfg = Debug|x64
+		{ED19C57A-5E1E-451C-8B91-052334A00323}.Debug|x64.Build.0 = Debug|x64
+		{ED19C57A-5E1E-451C-8B91-052334A00323}.Release|Any CPU.ActiveCfg = Release|x64
+		{ED19C57A-5E1E-451C-8B91-052334A00323}.Release|x64.ActiveCfg = Release|x64
+		{ED19C57A-5E1E-451C-8B91-052334A00323}.Release|x64.Build.0 = Release|x64
+		{5E50D704-2445-48CA-9DEC-D6CF3FE07740}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{5E50D704-2445-48CA-9DEC-D6CF3FE07740}.Debug|x64.ActiveCfg = Debug|x64
+		{5E50D704-2445-48CA-9DEC-D6CF3FE07740}.Debug|x64.Build.0 = Debug|x64
+		{5E50D704-2445-48CA-9DEC-D6CF3FE07740}.Release|Any CPU.ActiveCfg = Release|x64
+		{5E50D704-2445-48CA-9DEC-D6CF3FE07740}.Release|x64.ActiveCfg = Release|x64
+		{5E50D704-2445-48CA-9DEC-D6CF3FE07740}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C145ED15-021C-4F3C-BAED-673BA071F70A} = {79970CEE-E964-4CBD-9818-9B9DC47A2041}
+		{81EC2360-88BE-4B6C-A68C-6F7E6EA9CEAB} = {79970CEE-E964-4CBD-9818-9B9DC47A2041}
+	EndGlobalSection
+EndGlobal

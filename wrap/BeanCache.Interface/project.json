@@ -1,0 +1,18 @@
+{
+  "version": "1.0.0-*",
+  "frameworks": {
+    "net451": {
+      "wrappedProject": "../../BeanCache.Interface/BeanCache.Interface.csproj",
+      "bin": {
+        "assembly": "../../BeanCache.Interface/obj/{configuration}/BeanCache.Interface.dll",
+        "pdb": "../../BeanCache.Interface/obj/{configuration}/BeanCache.Interface.pdb"
+      },
+      "dependencies": {
+        "Microsoft.ServiceFabric": "4.2.99-preview",
+        "Microsoft.ServiceFabric.Data": "1.2.99-preview",
+        "Microsoft.ServiceFabric.Services": "1.2.99-preview",
+        "System.Fabric": "1.0.0-*"
+      }
+    }
+  }
+}

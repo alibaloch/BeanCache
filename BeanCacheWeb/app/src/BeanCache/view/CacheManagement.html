@@ -1,0 +1,124 @@
+﻿<md-tab label="Cache Manangement">
+    <md-content class="md-padding">
+        <h1 class="md-display-2">Cache Management</h1>
+        <div>
+            <md-button class="md-primary md-raised" ng-click="toggleCM('generate', $event)">Generate</md-button>
+            <!--<md-button class="md-primary md-raised" ng-click="toggleCM('show', $event)">Show All Cache</md-button>-->
+            <md-button class="md-primary md-raised" ng-click="toggleCM('set', $event)">Set Cache</md-button>
+            <md-button class="md-primary md-raised" ng-click="toggleCM('query', $event)">Query</md-button>
+            <md-button class="md-primary md-raised" ng-click="toggleCM('remove', $event)">Remove Cache</md-button>
+        </div>
+
+
+        <div ng-if="selectedCMItem==='generate'">
+            <md-content md-theme="docs-dark" layout-padding="" layout="row" layout-sm="column">
+                <md-input-container>
+                    <label>Number of Records</label>
+                    <input ng-model="numberOfRecords">
+                </md-input-container>
+                <md-button class="md-primary" ng-click="generateCache(numberOfRecords, $event)">
+                    Submit
+                </md-button>
+            </md-content>
+            <div ng-if="generateCacheSuccess===false&&generateCacheSubmit==true">
+                <b layout="row" layout-align="center center" class="md-padding">
+                    please wait...
+                </b>
+            </div>
+            <div ng-if="generateCacheDuration">
+                <b layout="row" layout-align="center center" class="md-padding">
+                    <!--Start:{{generateCacheDurationStart}}   End:{{generateCacheDurationEnd}}-->
+                    Total Duration: {{generateCacheDuration}}ms
+                    Duration Per Record: {{generateCacheDurationPerRecord}}ms
+                </b>
+            </div>
+        </div>
+
+        <div ng-if="selectedCMItem==='show'">
+            <md-content md-theme="docs-dark" layout-padding="" layout="row" layout-sm="column">
+                <md-input-container>
+                    <label>Number of Records</label>
+                    <input ng-model="numberOfRecords">
+                </md-input-container>
+                <md-button class="md-primary" ng-click="showCache(numberOfRecords)">
+                    Submit
+                </md-button>
+            </md-content>
+            <div ng-if="showCacheDuration">
+                <b layout="row" layout-align="center center" class="md-padding">
+                    <!--Start:{{showCacheDurationStart}}   End:{{showCacheDurationEnd}}-->
+                    Total Duration: {{showCacheDuration}}ms
+                    Duration Per Record: {{showCacheDurationPerRecord}}ms
+                </b>
+            </div>
+            <div ng-if="showCacheSubmit===true">
+                <md-list>
+                    <md-subheader class="md-no-sticky">Cache</md-subheader>
+                    <md-list-item class="md-2-line" ng-repeat="cacheInfo in cacheData.data.CacheInfo">
+                        <div class="md-list-item-text" layout="column">
+                            <h3>{{ cacheInfo.key }}</h3>
+                            <h4>{{ cacheInfo.value }}</h4>
+                        </div>
+                        <md-divider></md-divider>
+                    </md-list-item>
+                </md-list>
+            </div>
+        </div>
+
+        <div ng-if="selectedCMItem==='set'">
+            <md-content md-theme="docs-dark" layout-padding="" layout="row" layout-sm="column">
+                <md-input-container>
+                    <label>Key</label>
+                    <input ng-model="cacheItem.key">
+                </md-input-container>
+                <md-input-container>
+                    <label>Value</label>
+                    <input ng-model="cacheItem.value">
+                </md-input-container>
+                <md-button class="md-primary" ng-click="setCache()">
+                    Submit
+                </md-button>
+            </md-content>
+        </div>
+        <div ng-if="selectedCMItem==='query'">
+            <md-content md-theme="docs-dark" layout-padding="" layout="row" layout-sm="column">
+                <md-input-container>
+                    <label>Key</label>
+                    <input ng-model="cacheItem.key">
+                </md-input-container>
+                <md-input-container>
+                    <label>Value</label>
+                    <input disabled ng-model="cacheItem.value" />
+                </md-input-container>
+                <md-button class="md-primary" ng-click="getCache()">
+                    Query
+                </md-button>
+            </md-content>
+        </div>
+        <div ng-if="selectedCMItem==='remove'">
+            <md-content md-theme="docs-dark" layout-padding="" layout="row" layout-sm="column">
+                <md-input-container>
+                    <label>Key</label>
+                    <input ng-model="cacheItem.key">
+                </md-input-container>
+                <md-button class="md-primary" ng-click="removeCache()">
+                    Remove
+                </md-button>
+            </md-content>
+        </div>
+
+        <div>
+            <md-content md-theme="docs-dark" layout-padding="" layout="row" layout-sm="column">
+                <div ng-if="callDuration">
+                    <b layout="row" layout-align="center center" class="md-padding">
+                        Duration: {{callDuration}}ms
+                    </b>
+                    <b layout="row" layout-align="center center" class="md-padding">
+                        Result: {{message}}
+                    </b>
+                </div>
+            </md-content>
+        </div>
+
+    </md-content>
+</md-tab>

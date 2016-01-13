@@ -1,0 +1,24 @@
+﻿<md-tab label="DashBoard" ng-click="getHitsCount()">
+    <md-content class="md-padding">
+        <h1 class="md-display-2">Dashboard</h1>
+        <div style="width:16%;">
+            <md-input-container>
+                <label>Chart Type</label>
+                <md-select ng-model="partitionChartType" ng-change="partitionChartTypeChange(partitionChartType)">
+                    <md-option value="ColumnChart">
+                        Column Chart
+                    </md-option>
+                    <md-option value="PieChart">
+                        Pie Chart
+                    </md-option>
+                    <md-option value="BarChart">
+                        Bar Chart
+                    </md-option>
+                </md-select>
+            </md-input-container>
+        </div>
+        <div>
+            <div google-chart chart="chartObject" style="height:500px; width:100%;"></div>
+        </div>
+    </md-content>
+</md-tab>

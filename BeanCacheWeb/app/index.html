@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html lang="en" >
+  <head>
+    <title>BeanCache DashBoard</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic'>
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.0.0/angular-material.min.css"/>
+    <link rel="stylesheet" href="assets/app.css"/>
+    <style type="text/css">
+        /**
+         * Hide when Angular is not yet loaded and initialized
+         */
+        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+          display: none !important;
+        }
+    </style>
+  </head>
+
+  <body id="beanCacheContainer" ng-app="beanCacheApp"  ng-controller="BeanCacheController as bc">
+    <div class="tabsdemoDynamicHeight">
+        <md-content class="md-padding">
+            <md-toolbar class="md-whiteframe-z1">
+                <md-content class="md-padding">
+                    <ng-md-icon icon="cached" style="fill: orange" size="48"></ng-md-icon>BeanCache
+                </md-content>
+            </md-toolbar>
+            <md-tabs md-dynamic-height="" md-border-bottom="">
+                <dashboard></dashboard>
+                <cachemanagement></cachemanagement>
+                <settings></settings>
+            </md-tabs>
+        </md-content>
+    </div>
+
+    <!-- Scripts -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-animate.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-aria.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.0.0/angular-material.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-google-chart/0.0.11/ng-google-chart.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-material-icons/0.6.0/angular-material-icons.min.js"></script>
+    <script type="text/javascript">
+          var beanCacheApp = angular
+              .module('beanCacheApp', ['ngMaterial', 'beanCache']).constant(
+                  "appConfig", {
+                            asfAPIUrl: '/webapp'
+                      })
+              .config(function($mdThemingProvider, $mdIconProvider){
+
+                  $mdIconProvider
+                      .defaultIconSet("./assets/svg/avatars.svg", 128)
+                      .icon("menu"       , "./assets/svg/menu.svg"        , 24)
+                      .icon("share"      , "./assets/svg/share.svg"       , 24)
+                      .icon("google_plus", "./assets/svg/google_plus.svg" , 512)
+                      .icon("hangouts"   , "./assets/svg/hangouts.svg"    , 512)
+                      .icon("twitter"    , "./assets/svg/twitter.svg"     , 512)
+                      .icon("phone"      , "./assets/svg/phone.svg"       , 512);
+
+                      $mdThemingProvider.theme('docs-dark', 'default')
+                          .primaryPalette('light-blue')
+                              .accentPalette('red');
+
+              });
+    </script>
+    <!-- Controller, Services, Directives -->
+    <script src="./src/BeanCache/BeanCache.js"></script>
+    <script src="./src/BeanCache/BeanCacheController.js"></script>  
+    <script src="./src/BeanCache/BeanCacheService.js"></script>
+    <script src="./src/BeanCache/directives/BeanCacheDirectives.js"></script>
+  </body>
+</html>

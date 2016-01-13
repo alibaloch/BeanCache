@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ApplicationManifest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ApplicationTypeName="BeanCacheAppType" ApplicationTypeVersion="1.0.0.0" xmlns="http://schemas.microsoft.com/2011/01/fabric">
+   <Parameters>
+      <Parameter Name="BeanCacheWeb_InstanceCount" DefaultValue="1" />
+      <Parameter Name="BeanCacheService_MinReplicaSetSize" DefaultValue="2" />
+      <Parameter Name="BeanCacheService_PartitionCount" DefaultValue="1" />
+      <Parameter Name="BeanCacheService_TargetReplicaSetSize" DefaultValue="3" />
+   </Parameters>
+   <ServiceManifestImport>
+      <ServiceManifestRef ServiceManifestName="BeanCacheWebPkg" ServiceManifestVersion="1.0.0.0" />
+      <ConfigOverrides />
+   </ServiceManifestImport>
+   <ServiceManifestImport>
+      <ServiceManifestRef ServiceManifestName="BeanCacheServicePkg" ServiceManifestVersion="1.0.0.0" />
+      <ConfigOverrides />
+   </ServiceManifestImport>
+   <DefaultServices>
+      <Service Name="BeanCacheWeb">
+         <StatelessService ServiceTypeName="BeanCacheWebType" InstanceCount="[BeanCacheWeb_InstanceCount]">
+            <SingletonPartition />
+         </StatelessService>
+      </Service>
+      <Service Name="BeanCacheService">
+         <StatefulService ServiceTypeName="BeanCacheServiceType" TargetReplicaSetSize="[BeanCacheService_TargetReplicaSetSize]" MinReplicaSetSize="[BeanCacheService_MinReplicaSetSize]">
+            <UniformInt64Partition PartitionCount="13" LowKey="0" HighKey="255" />
+         </StatefulService>
+      </Service>
+   </DefaultServices>
+</ApplicationManifest>
