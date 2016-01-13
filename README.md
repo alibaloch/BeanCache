@@ -37,42 +37,41 @@ BeanCache is made up of two microservices build using Service Fabric:
 BeanCache Web is self-hosted [Stateless Reliable Services built using OWIN](https://azure.microsoft.com/en-us/documentation/articles/service-fabric-reliable-services-communication-webapi/). It exposes following interface using WebAPI to get/set/remove values from cache. GetHitsCount give information about how many cached items are in each [service fabric partition](https://azure.microsoft.com/en-us/documentation/articles/service-fabric-concepts-partitioning/).
 
 
-public interface IBeanCache : IService
-{
-Task SetAsync(string key, string value);
-Task<string>
-  GetAsync(string key);
-  Task RemoveAsync(string key);
-  Task<long>
-    GetHitsCount();
+	public interface IBeanCache : IService
+	{
+		Task SetAsync(string key, string value);
+		Task<string>
+		GetAsync(string key);
+		Task RemoveAsync(string key);
+		Task<long>
+		GetHitsCount();
+	}
 
-    }
+The MVC Web API controller looks like:
 
-    The MVC Web API controller looks like:
-
-    public class BeanCacheController : ApiController
-    {
-    internal static Uri BeanCacheStatefulServiceName = new Uri("fabric:/BeanCacheApp/BeanCacheService");
-    [HttpGet]
-    public async Task<long>
-      Set(string key, string value)
-      {
-      ...
-      long partitionKey = GetPartitionKey(key);
-      var client = ServiceProxy.Create<IBeanCache>
-        (partitionKey, BeanCacheStatefulServiceName);
-        await client.SetAsync(key, value);
-        ...
-        }
-
-        [HttpGet]
-        public async Task<GetResponse>
-          Get(string key)
-          {
-          ...
-          }
-          ...
-          }
+	public class BeanCacheController : ApiController
+	{
+		internal static Uri BeanCacheStatefulServiceName = new Uri("fabric:/BeanCacheApp/BeanCacheService");
+		[HttpGet]
+		public async Task<long>
+		Set(string key, string value)
+		{
+			...
+			long partitionKey = GetPartitionKey(key);
+			var client = ServiceProxy.Create<IBeanCache>
+			(partitionKey, BeanCacheStatefulServiceName);
+			await client.SetAsync(key, value);
+			...
+		}
+		
+		[HttpGet]
+		public async Task<GetResponse>
+		Get(string key)
+		{
+			...
+		}
+	...
+	}
 
 
 ###BeanCache Service
