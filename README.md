@@ -75,16 +75,15 @@ Task<string>
           }
 
 
-          ### BeanCache Service
-          BeanCache Service is a Stateful service which stores <key, value="">
-            pairs in [Reliable dictionary collection](https://azure.microsoft.com/en-us/documentation/articles/service-fabric-reliable-services-reliable-collections/). The BeanCache Web service call BeanCache Service to get/set value in the reliable dictionary.
+###BeanCache Service
+BeanCache Service is a Stateful service which stores <key, value=""> pairs in [Reliable dictionary collection](https://azure.microsoft.com/en-us/documentation/articles/service-fabric-reliable-services-reliable-collections/). The BeanCache Web service call BeanCache Service to get/set value in the reliable dictionary.
 
-            public class BeanCacheService : StatefulService, IBeanCache
-            {
-            private readonly string BeanCacheDictionaryName = "BeanCacheDictionary";
-            private readonly string StatisticsDictionaryName = "BeanStatisticsDictionary";
+        public class BeanCacheService : StatefulService, IBeanCache
+        {
+        private readonly string BeanCacheDictionaryName = "BeanCacheDictionary";
+        private readonly string StatisticsDictionaryName = "BeanStatisticsDictionary";
 
-            public async Task<string> GetAsync(string key)
+        public async Task<string> GetAsync(string key)
         {
             try
             {
