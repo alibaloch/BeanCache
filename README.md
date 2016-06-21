@@ -113,3 +113,5 @@ Dashboard is set of static HTML and Javascript files build using AngularJS and e
 ![BeanCache Architecture](https://raw.githubusercontent.com/alibaloch/BeanCache/master/images/Dashboard1.png)
 ## Disclaimer
 The purpose of this sample program using Service Fabric is to understand the underpinning of Service Fabric and to build an end to end application. The goal is not to compete/replace existing caching services. 
+
+This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
